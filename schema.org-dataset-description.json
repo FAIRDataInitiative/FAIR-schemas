@@ -1,0 +1,98 @@
+{
+  "@id": "http://semanticscience.org/schemas/schema.org-dataset-description.json",
+  "@type": "Dataset",
+  "@context": {
+     "@vocab": "http://schema.org/",
+      "schema": "http://schema.org"
+  },
+  "title": "FAIR metadata template schema",
+  "description": "A schema to provide valid schema.org dataset metadata",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "description"
+  ],
+  "properties": {
+    "identifier": {
+      "@type": "@id",
+      "type": "string",
+      "title": "Identifier",
+      "description": "Provide a unique and persistent identifier for the identifier."
+    },
+    "name": {
+      "type": "string",
+      "title": "Name",
+      "description": "The name for the digital resource."
+    },
+    "alternateName": {
+      "type": "string",
+      "title": "Alternate names",
+      "description": "Alternate names for the digital resource."
+    },      
+    "description": {
+      "type": "string",
+      "title": "Description",
+      "description": "A brief description of the digital resource."
+    },
+    "url": {
+      "@type": "@id",
+      "title": "Web page",
+      "description": "A web page about the digital resource.",
+      "format": "uri"
+    },
+    "sameAs": {
+      "@type": "@id",
+      "title": "Web page",
+      "description": "A web page about the digital resource.",
+       "format": "uri"
+    },
+    "keywords": {
+      "type": "array",
+      "title": "Keywords",
+      "description": "A list of keywords",
+      "items": {
+          "type": "string"
+      }
+    },
+    "creator": {
+      "$ref": "#/definitions/agent"
+    }
+  },
+  "definitions": {
+     "agent": {
+        "type": "object",
+        "properties": {
+           "name": {
+              "type": "string",
+              "title": "Name",
+              "description": "The agent's name"
+           },
+           "url": {
+               "type": "string",
+               "title": "webpage",
+               "description": "A web page for the agent",
+               "format": "uri"
+           },
+           "contactPoint": {
+              "$ref": "#/definitions/contactPoint" 
+           }
+        }
+     },
+     "contactPoint": {
+        "type": "object",
+         "properties": {
+            "contactType": {
+               "type": "string"
+            }, 
+            "telephone": {
+               "type": "string"
+            },
+            "email": {
+               "type": "string",
+                "format": "email"
+            }
+         }
+     }
+  }
+}
