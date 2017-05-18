@@ -1,5 +1,5 @@
 {
-  "@id": "http://semanticscience.org/schemas/schema.org-dataset-description.json",
+  "@id": "https://raw.githubusercontent.com/FAIRDataInitiative/FAIR-schemas/master/schema.org-dataset-description.json",
   "@type": "Dataset",
   "@context": {
      "@vocab": "http://schema.org/",
